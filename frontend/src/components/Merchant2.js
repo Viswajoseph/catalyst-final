@@ -2,7 +2,6 @@ import React, { useState,useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../style/Merchant2.css';
 function MerchantPage() {
-  const [otp, setOtp] = useState('');
   const navigate = useNavigate();
   const [dummyOrder, setDummyOrder] = useState({
     id: 1,
@@ -27,7 +26,7 @@ function MerchantPage() {
         // Cleanup the listener function when the component unmounts
         window.phoneEmailListener = null;
     };
-}, []);
+}, [navigate]);
 
  
 
