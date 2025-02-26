@@ -30,7 +30,7 @@ function ASMPage() {
     setChatMessages((prev) => [...prev, userMessage]);
 
     try {
-      const response = await axios.post('http://localhost:5000/api/chat', {
+      const response = await axios.post('https://catalyst-final.onrender.com/api/chat', {
         message: chatInput,
       });
       const botMessage = { sender: 'bot', text: response.data.reply };
@@ -58,7 +58,7 @@ function ASMPage() {
     // Fetch confirmed bills from MongoDB
     const fetchConfirmedBills = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/orders');
+        const response = await axios.get('https://catalyst-final.onrender.com/orders');
         setConfirmedBills(response.data);
       } catch (error) {
         console.error('Error fetching orders:', error);
@@ -68,7 +68,7 @@ function ASMPage() {
     // Fetch products from MongoDB
     const fetchProducts = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/products');
+        const response = await axios.get('https://catalyst-final.onrender.com/api/products');
         setProducts(response.data);
       } catch (error) {
         console.error('Error fetching products:', error);
@@ -89,7 +89,7 @@ function ASMPage() {
 
   const handleAddProduct = async () => {
     try {
-      const response = await axios.post('http://localhost:5000/api/products', newProduct);
+      const response = await axios.post('https://catalyst-final.onrender.com/api/products', newProduct);
       setProducts([...products, response.data]);
       setNewProduct({ name: '', price: '' });
     } catch (error) {

@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // Configure Axios instance
 const api = axios.create({
-  baseURL: 'http://localhost:5000/api', // Adjust the base URL as needed
+  baseURL: 'https://catalyst-final.onrender.com', // Adjust the base URL as needed
 });
 
 // Generic error handler

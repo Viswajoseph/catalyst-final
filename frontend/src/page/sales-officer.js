@@ -101,7 +101,7 @@ const SalesOfficerPage = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/products');
+        const response = await axios.get('https://catalyst-final.onrender.com/api/products');
         console.log(response.data);
         const productData = response.data;
 
@@ -134,7 +134,7 @@ const SalesOfficerPage = () => {
   const handleAddOrder = async (shopName, product, quantity, price) => {
     try {
       const orderData = { shopName, product, quantity, price };
-      const response = await axios.post('http://localhost:5000/orders', orderData);
+      const response = await axios.post('https://catalyst-final.onrender.com/orders', orderData);
 
       if (response.status === 201) {
         alert(`Order placed for ${quantity} x ${product} at ${shopName} for ₹${price}. ${response.data.message}`);
